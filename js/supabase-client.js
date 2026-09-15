@@ -8,8 +8,8 @@
  * (ver supabase/schema.sql — a policy já vem pronta lá).
  */
 
-const SUPABASE_URL = 'COLOQUE_AQUI_A_URL_DO_PROJETO'; // ex: https://xxxx.supabase.co
-const SUPABASE_ANON_KEY = 'COLOQUE_AQUI_A_ANON_KEY';
+const SUPABASE_URL = 'https://imbfzmnvhxozqvotdwyn.supabase.co'; // ex: https://xxxx.supabase.co
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImltYmZ6bW52aHhvenF2b3Rkd3luIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk0OTg5MDUsImV4cCI6MjEwNTA3NDkwNX0.a5mYRXm83jJkQlYe1xE1iF4_MwDw41YIBT5eOGh2taQ';
 
 /**
  * Envia as respostas do diagnóstico para a tabela `leads` no Supabase
