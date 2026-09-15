@@ -6,7 +6,7 @@
  * Formato: "seu-usuario/nome-do-evento" (sem https://cal.com/)
  */
 
-const CAL_LINK = 'COLOQUE_AQUI_SEU_CAL_LINK'; // ex: "cassio-bazana/diagnostico-45min"
+const CAL_LINK = 'cassio-bazana-bts9y3/30min'; // ex: "cassio-bazana/diagnostico-45min"
 
 function initCalEmbed() {
   const container = document.getElementById('calEmbed');
