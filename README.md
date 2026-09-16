@@ -1,29 +1,27 @@
-# Diagnóstico — Bazana Digital
+# bazanadesign.com.br
 
-Formulário de diagnóstico (nicho jurídico), estático (HTML/CSS/JS), tema dark, identidade Bazana Digital. Envia leads para Supabase.
+Repositório do domínio. Por enquanto só o formulário de diagnóstico; a raiz (`/`) fica reservada para o site institucional que entra depois.
 
 ## Estrutura
-- `index.html` — página única, form multi-etapa (uma pergunta por tela)
-- `css/styles.css` — tokens do design system + componentes
-- `js/form.js` — navegação entre perguntas, validação, coleta de respostas
-- `js/supabase-client.js` — envio para Supabase (preencher credenciais)
-- `supabase/schema.sql` — schema da tabela `leads` + policy de RLS
+- `diagnostico/` — formulário de diagnóstico (nicho jurídico), estático (HTML/CSS/JS), tema dark, identidade Bazana Digital. Fica publicado em `bazanadesign.com.br/diagnostico`. Envia leads para Supabase e mostra agendamento via Cal.com na tela final.
+- `vercel.json` — `cleanUrls` ligado, pra `/diagnostico` funcionar sem precisar da barra no final
+- `supabase/schema.sql` — schema da tabela `leads` + policy de RLS (já rodado no projeto Supabase)
 
-## Setup do Supabase
-1. Criar projeto em supabase.com
-2. Rodar `supabase/schema.sql` no SQL Editor do projeto
-3. Em Project Settings → API, copiar `Project URL` e `anon public key`
-4. Colar em `js/supabase-client.js` (`SUPABASE_URL` e `SUPABASE_ANON_KEY`)
+Quando o site institucional existir, ele entra na raiz do repo (`index.html` na raiz, mais os assets dele) — sem mexer em `diagnostico/`.
+
+## Diagnóstico — detalhes
+- `diagnostico/index.html` — página única, form multi-etapa (uma pergunta por tela)
+- `diagnostico/css/styles.css` — tokens do design system + componentes
+- `diagnostico/js/form.js` — navegação entre perguntas, validação, coleta de respostas
+- `diagnostico/js/supabase-client.js` — envio para Supabase (credenciais já configuradas)
+- `diagnostico/js/cal-embed.js` — embed do Cal.com na tela final (link já configurado)
 
 ## Deploy (Vercel)
-Projeto estático — sem build step. Import direto do repositório GitHub na Vercel, framework preset "Other".
-
-## Setup do Cal.com
-1. Em `js/cal-embed.js`, trocar `CAL_LINK` pelo seu link (formato `seu-usuario/nome-do-evento`, sem `https://cal.com/`)
-2. O embed aparece automaticamente na tela final, após o envio do formulário
+Projeto estático — sem build step, framework preset "Other". Import direto do repositório GitHub. Domínio customizado (`bazanadesign.com.br`) configurado em Project Settings → Domains, com DNS apontado pro Vercel no registrador.
 
 ## Pendente
 - [x] Perguntas do diagnóstico (10, com campos condicionais em "Área de atuação" e "Possui site")
-- [ ] Credenciais do Supabase (`js/supabase-client.js`)
-- [ ] Link do Cal.com (`js/cal-embed.js`)
+- [x] Credenciais do Supabase
+- [x] Link do Cal.com
 - [ ] Repositório GitHub + deploy Vercel
+- [ ] Domínio bazanadesign.com.br apontado no Vercel
