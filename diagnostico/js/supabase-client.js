@@ -2,14 +2,14 @@
  * Bazana Digital — Diagnóstico
  * Integração com Supabase (leads).
  *
- * Preencher com as credenciais do projeto Supabase antes do deploy.
+ * Projeto: bazanadesign-crm (mesmo banco usado pelo painel CRM).
  * A anon key é segura para uso no client DESDE QUE exista uma policy de
  * Row Level Security que permita apenas INSERT na tabela `leads`
- * (ver supabase/schema.sql — a policy já vem pronta lá).
+ * (ver schema do CRM — a policy leads_insert_anon já cobre isso).
  */
 
-const SUPABASE_URL = 'https://imbfzmnvhxozqvotdwyn.supabase.co'; // ex: https://xxxx.supabase.co
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImltYmZ6bW52aHhvenF2b3Rkd3luIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk0OTg5MDUsImV4cCI6MjEwNTA3NDkwNX0.a5mYRXm83jJkQlYe1xE1iF4_MwDw41YIBT5eOGh2taQ';
+const SUPABASE_URL = 'https://pjigojibygnrlivkipgm.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBqaWdvamlieWducmxpdmtpcGdtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk0OTUwMjgsImV4cCI6MjEwNTA3MTAyOH0.Zg0QbbuFPIWjxcvPMzzBdNBwzQbNQM-vaZ1poyejoZU';
 
 /**
  * Envia as respostas do diagnóstico para a tabela `leads` no Supabase
@@ -20,15 +20,12 @@ const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
  */
 async function submitDiagnostico(answers) {
   const payload = {
+    origem: 'diagnostico-juridico',
     nome: answers.nome ?? null,
     email: answers.email ?? null,
     whatsapp: answers.whatsapp ?? null,
-    nome_escritorio: answers.nome_escritorio ?? null,
-    porte: answers.porte ?? null,
-    area_atuacao: answers.area_atuacao === 'outra' ? answers.area_atuacao_outra : answers.area_atuacao,
-    respostas: answers, // jsonb com todas as respostas, inclusive campos futuros
-    origem: 'diagnostico-form',
-    criado_em: new Date().toISOString(),
+    empresa: answers.nome_escritorio ?? null,
+    respostas: answers, // jsonb com todas as respostas, inclusive porte/área de atuação
   };
 
   if (SUPABASE_URL.startsWith('COLOQUE_AQUI') || SUPABASE_ANON_KEY.startsWith('COLOQUE_AQUI')) {
