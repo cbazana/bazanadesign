@@ -82,7 +82,7 @@ body {
 .page {
   position: relative;
   z-index: 1;
-  max-width: 1440px;
+  max-width: 1280px;
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
@@ -92,7 +92,7 @@ body {
 
 .content-col {
   width: 100%;
-  max-width: 640px;
+  max-width: 1280px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -131,9 +131,9 @@ body {
 
 .intro-grid {
   display: grid;
-  grid-template-columns: 1fr 176px;
-  gap: var(--space-6);
-  align-items: start;
+  grid-template-columns: 1fr 340px;
+  gap: var(--space-8);
+  align-items: center;
 }
 
 .intro-main {
@@ -156,18 +156,19 @@ body {
 .intro-main h1 {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 40px;
-  line-height: 48px;
+  font-size: 56px;
+  line-height: 60px;
   margin: 0;
   letter-spacing: -0.01em;
+  max-width: 16ch;
 }
 
 .intro-lead {
-  font-size: 18px;
-  line-height: 28px;
+  font-size: 19px;
+  line-height: 30px;
   color: var(--text-muted);
   margin: 0;
-  max-width: 46ch;
+  max-width: 42ch;
 }
 
 .btn-start {
@@ -183,8 +184,8 @@ body {
 .stat-card {
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  padding: var(--space-4);
+  gap: 4px;
+  padding: var(--space-5);
   background: var(--surface-1);
   border: 1px solid var(--border-subtle);
   border-left: 2px solid var(--primary-500);
@@ -194,8 +195,8 @@ body {
 .stat-card strong {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 22px;
-  line-height: 28px;
+  font-size: 26px;
+  line-height: 32px;
   color: var(--neutral-50);
 }
 
@@ -518,6 +519,13 @@ body {
 .site-footer a:hover { color: var(--primary-500); }
 
 /* ---------- Responsivo ---------- */
+@media (max-width: 900px) {
+  .intro-grid { grid-template-columns: 1fr; }
+  .intro-stats { flex-direction: row; flex-wrap: wrap; }
+  .stat-card { flex: 1 1 160px; }
+  .intro-main h1 { max-width: none; }
+}
+
 @media (max-width: 480px) {
   .page { padding: var(--space-5) var(--space-4) var(--space-8); }
   .site-header { flex-direction: column; align-items: flex-start; gap: var(--space-2); }
