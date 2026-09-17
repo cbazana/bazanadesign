@@ -17,34 +17,37 @@
 
   <div class="page">
 
-    <header class="site-header">
-      <img src="/diagnostico/assets/logo.svg" alt="Bazana Digital" class="logo" />
-      <span class="header-tag">Petição - Diagnóstico de presença digital</span>
-    </header>
-
     <div class="content-col">
+
+      <header class="site-header">
+        <img src="/diagnostico/assets/logo.svg" alt="Bazana Digital" class="logo" />
+        <span class="header-tag">Petição - Diagnóstico de presença digital</span>
+      </header>
 
     <!-- ===================== INTRO ===================== -->
     <section class="intro" id="intro" data-view>
-      <h1>Antes de conversarmos, queremos chegar já sabendo do que falar.</h1>
-      <p>Preencha o formulário para entendermos o seu escritório. É gratuito, sem compromisso, e leva poucos minutos.</p>
-
-      <div class="intro-meta">
-        <div>
-          <strong id="totalStepsLabel">—</strong>
-          <span>perguntas</span>
+      <div class="intro-grid">
+        <div class="intro-main">
+          <p class="intro-eyebrow">Diagnóstico gratuito</p>
+          <h1>Antes de conversarmos, queremos chegar já sabendo do que falar.</h1>
+          <p class="intro-lead">Preencha o formulário para entendermos o seu escritório. É gratuito, sem compromisso, e leva poucos minutos.</p>
+          <button class="btn-primary btn-start" id="startBtn" type="button">Começar diagnóstico</button>
         </div>
-        <div>
-          <strong>45 min</strong>
-          <span>duração da call</span>
-        </div>
-        <div>
-          <strong>Gratuito</strong>
-          <span>sem compromisso</span>
+        <div class="intro-stats">
+          <div class="stat-card">
+            <strong id="totalStepsLabel">—</strong>
+            <span>perguntas</span>
+          </div>
+          <div class="stat-card">
+            <strong>45 min</strong>
+            <span>duração da call</span>
+          </div>
+          <div class="stat-card">
+            <strong>Gratuito</strong>
+            <span>sem compromisso</span>
+          </div>
         </div>
       </div>
-
-      <button class="btn-primary btn-start" id="startBtn" type="button">Começar diagnóstico</button>
     </section>
 
     <!-- ===================== FORM ===================== -->
@@ -353,12 +356,12 @@
       <div id="calEmbed" class="cal-embed"></div>
     </section>
 
-    </div>
+      <footer class="site-footer">
+        <span>© <span id="year"></span> Bazana Digital</span>
+        <a href="https://bazanadigital.com" target="_blank" rel="noopener">bazanadigital.com</a>
+      </footer>
 
-    <footer class="site-footer">
-      <span>© <span id="year"></span> Bazana Digital</span>
-      <a href="https://bazanadigital.com" target="_blank" rel="noopener">bazanadigital.com</a>
-    </footer>
+    </div>
 
   </div>
 
