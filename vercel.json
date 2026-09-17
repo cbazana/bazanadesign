@@ -1,4 +1,8 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/crm", "destination": "https://bazanadesign-crm.vercel.app/crm" },
+    { "source": "/crm/:path*", "destination": "https://bazanadesign-crm.vercel.app/crm/:path*" }
+  ]
 }
