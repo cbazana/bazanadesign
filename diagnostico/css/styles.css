@@ -126,7 +126,12 @@ body {
 
 /* ---------- Intro / Hero ---------- */
 .intro {
+  display: none;
   margin-bottom: var(--space-8);
+}
+
+.intro.is-active {
+  display: block;
 }
 
 .intro-grid {

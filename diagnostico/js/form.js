@@ -21,6 +21,8 @@
 
   if (totalStepsLabel) totalStepsLabel.textContent = total;
 
+  showView('intro');
+
   function showView(name) {
     Object.entries(views).forEach(([key, el]) => {
       if (!el) return;
