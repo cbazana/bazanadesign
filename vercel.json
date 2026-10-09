@@ -2,7 +2,17 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/crm", "destination": "https://bazanadesign-crm.vercel.app/crm" },
-    { "source": "/crm/:path*", "destination": "https://bazanadesign-crm.vercel.app/crm/:path*" }
+    {
+      "source": "/crm",
+      "destination": "https://bazanadesign-crm.vercel.app/crm"
+    },
+    {
+      "source": "/crm/:path*",
+      "destination": "https://bazanadesign-crm.vercel.app/crm/:path*"
+    },
+    {
+      "source": "/proposta/:token",
+      "destination": "https://bazanadesign-crm.vercel.app/crm/proposta/:token"
+    }
   ]
 }
