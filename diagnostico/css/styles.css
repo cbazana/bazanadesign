@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Bazana Digital — Diagnóstico
+   Bazana Design — Diagnóstico
    Tokens extraídos de claude/design-system-fundacoes.md (projeto BazanaDesign)
    ========================================================================== */
 
@@ -20,8 +20,8 @@
   --focus-ring: rgba(49, 152, 113, 0.45);
 
   /* Tipografia */
-  --font-display: 'Fraunces', serif;
-  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-display: 'Merriweather', serif;
+  --font-body: 'Open Sans', sans-serif;
 
   /* Espaçamento — escala 4·8·12·16·24·32·40·56·64 */
   --space-1: 4px;
