@@ -68,7 +68,7 @@ body {
 }
 body.in-form .topbar { transform: none; }
 .topbar-in { height: 60px; display: flex; align-items: center; justify-content: space-between; gap: var(--s4); padding-inline: clamp(16px, 3vw, 28px); }
-.topbar .logo { height: 22px; }
+.topbar .logo { height: 32px; }
 .steps { display: flex; align-items: center; gap: var(--s1); list-style: none; margin: 0; padding: 0; }
 .steps li { display: flex; align-items: center; gap: var(--s1); }
 .steps li + li::before { content: ''; width: 10px; height: 1px; background: var(--border-strong); }
@@ -114,7 +114,7 @@ body.in-form .topbar { transform: none; }
 .cover { padding-block: clamp(40px, 9vh, 88px); }
 .cover .card { max-width: 560px; }
 .cover-hd { padding: var(--s7) var(--s7) var(--s6); display: grid; gap: var(--s5); justify-items: start; }
-.cover-hd .logo { height: 24px; }
+.cover-hd .logo { height: 40px; }
 .cover h1 {
   font-family: var(--font-display); font-weight: 600;
   font-size: 52px; line-height: 1.02; letter-spacing: -0.02em;
@@ -282,6 +282,9 @@ p, li, dd, .hint, label { text-wrap: pretty; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
 </style>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 <body>
 <div class="bg"></div>
